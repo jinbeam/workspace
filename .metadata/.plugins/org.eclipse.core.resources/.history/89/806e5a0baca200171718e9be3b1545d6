@@ -1,0 +1,17 @@
+package shop.service.user.impl;
+
+import shop.service.user.Ks;
+
+public class Ks2Impl implements Ks {
+
+	public Ks2Impl() {
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public void a() {
+		// TODO Auto-generated method stub
+
+	}
+
+}
