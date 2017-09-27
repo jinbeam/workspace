@@ -13,8 +13,9 @@ public class Prob12 {
 	}
 	
 	private static String getParameter(String url, String paramName) {
-		url += '&';
+		
 		return (url.substring(url.indexOf(paramName)+paramName.length()+1)).
 				substring(0, (url.substring(url.indexOf(paramName)+paramName.length()+1)).indexOf('&'));
 	}
+
 }
