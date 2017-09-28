@@ -29,6 +29,7 @@ public class FileWriterTestFilter01
 		 String source = null;
 		 while( (source = br.readLine()) != null){
 			 bw.write(source);
+			 bw.newLine();
 			 readCount++;
 		 }
 		 bw.flush();

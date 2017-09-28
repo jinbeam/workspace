@@ -1,0 +1,58 @@
+package sub0929;
+
+public class Account {
+	private String accountNo;
+	private boolean creditLine;
+	private int creditLineLimit;
+	private int balance;
+	
+	public Account() {
+	}
+	
+	
+	public Account(String accountNo, boolean creditLine, int creditLineLimit, int balance) {
+		this.accountNo = accountNo;
+		this.creditLine = creditLine;
+		this.creditLineLimit = creditLineLimit;
+		this.balance = balance;
+	}
+
+
+	
+	public String getAccountNo() {
+		return accountNo;
+	}
+	public void setAccountNo(String accountNo) {
+		this.accountNo = accountNo;
+	}
+	public boolean isCreditLine() {
+		return creditLine;
+	}
+	public void setCreditLine(boolean creditLine) {
+		this.creditLine = creditLine;
+	}
+	public int getCreditLineLimit() {
+		return creditLineLimit;
+	}
+	public void setCreditLineLimit(int creditLineLimit) {
+		this.creditLineLimit = creditLineLimit;
+	}
+	public int getBalane() {
+		return balance;
+	}
+	public void setBalane(int balane) {
+		this.balance = balance;
+	}
+	
+	public void withdraw(int money) {
+		balance += money;
+	}
+	
+	public void deposit(int money) throws Exception {
+		balance -= money;
+		if((creditLineLimit) < Math.abs(balance)) {
+			balance += money;
+			throw new Exception("잔고부족 출금불가 합니다.");
+		}
+	}
+}

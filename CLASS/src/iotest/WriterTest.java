@@ -11,7 +11,7 @@ public class WriterTest
 			//InputStream : 표준입력장치를 추상화한 class
 			//InputStream inputStream = System.in;
 			//문자처리를 위한 reader로 변경
-			Reader reader = new InputStreamReader(System.in);
+			Reader reader = new BufferedReader(new InputStreamReader(System.in));
 
 			//OutPutStream : 표준출력장치를 추상화한 class
 			//OutputStream outputStream = System.out;

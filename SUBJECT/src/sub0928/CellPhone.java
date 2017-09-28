@@ -11,8 +11,6 @@ class FindMinusException extends IllegalArgumentException {
 	public String getMessage() {
 		return  str+"시간입력오류";
 	}
-	
-	
 }
 
 
@@ -56,8 +54,8 @@ public class CellPhone {
 	
 	public boolean equals(Object obj) {
 		if(obj instanceof CellPhone) {
-			if(((CellPhone) obj).model == this.model) {
-				return true;
+			if(((CellPhone) obj).model == this.model) { // this.model.equals( ((CellPhone)obj).model) )
+				return true;															// 객체는 상태값 비교
 			}
 			else {
 				return false;
