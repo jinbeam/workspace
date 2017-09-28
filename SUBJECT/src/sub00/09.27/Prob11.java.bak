@@ -1,0 +1,41 @@
+public class Prob11
+{
+	public static void main(String[] args) 
+	{
+		Prob11 p1 = new Prob11();
+		
+		System.out.println("입력 :  Korea");
+		System.out.println("출력 : "+p1.toEncoding("Korea"));
+		System.out.println("입력 : 홍길동");
+		System.out.println("출력 : "+p1.toEncoding("홍길동"));
+		System.out.println("입력 : 홍 길 동");
+		System.out.println("출력 : "+p1.toEncoding("홍 길 동"));
+		System.out.println("입력 : 0319");
+		System.out.println("출력 : "+p1.toEncoding("0319"));
+		
+
+	/*String value = "홍 길 동";
+		byte[] temp = value.getBytes();
+		System.out.println( Integer.toHexString(temp[0]) );
+		System.out.println( Integer.toHexString(temp[1]) );
+		System.out.println( Integer.toHexString(temp[2]) );
+		System.out.println( Integer.toHexString(temp[3]) );
+		System.out.println( Integer.toHexString(temp[4]) );
+		System.out.println( Integer.toHexString(temp[5]) );
+		System.out.println( Integer.toHexString(temp[6]) );
+		System.out.println( Integer.toHexString(temp[7]) );*/
+	
+	}
+
+	public String toEncoding(String str){
+		byte[] temp = str.getBytes();
+		String string="";
+		
+		for(int i=0; i<temp.length; i++){
+			string += "%"+Integer.toHexString(temp[i]).substring(6)+"%";
+		}
+
+
+		return string;
+	}
+}

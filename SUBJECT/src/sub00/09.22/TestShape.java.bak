@@ -1,0 +1,49 @@
+abstract class Shape
+{
+	private double area;
+	private String name;
+
+	public Shape(){}
+
+	public Shape(String name){
+		this.name = name;
+	}
+
+	public double getArea(){
+		return area;
+	}
+
+	public String getName(){
+		return name;
+	}
+
+	public void setArea(double area){
+		this.area = area;
+	}
+
+	public void setName(String name){
+		this.name = name;
+	}
+
+	public void print(){
+		System.out.println(name+"의 면적은 "+area);
+	}
+
+	abstract public void calculationArea();
+}
+
+public class TestShape
+{
+	public static void main(String[] args) 
+	{
+		Shape[] shape = new Shape[2];
+
+		shape[0] = new Circle("원", 10);
+		shape[1] = new Rectangular("직사각형", 10, 20);
+
+		for(int i=0; i<shape.length; i++){
+			shape[i].calculationArea();
+			shape[i].print();
+		}
+	}
+}
