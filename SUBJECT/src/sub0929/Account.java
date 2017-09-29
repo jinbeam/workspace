@@ -57,6 +57,6 @@ public class Account {
 	}
 	
 	public String toString() {
-		return "계좌번호 : "+accountNo+", 잔고 : "+balance+"원\t[[  "+(-creditLineLimit)+"원 마이너스통장   ]]";
+		return " 계좌번호 : " + accountNo + ", 잔고 : " + balance+ ((creditLine == true) ? "\t[[ "+ (-creditLineLimit)+"원 마이너스 통장   ]]" : "");
 	}
 }
