@@ -10,6 +10,7 @@ public class Dir {
 	
 	private void printDir(String str) {
 		File f = new File(str);
+		
 		File[] list = f.listFiles();
 		
 		for(int i=0;i<list.length;i++) {
