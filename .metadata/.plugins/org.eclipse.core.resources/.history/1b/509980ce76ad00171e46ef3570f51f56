@@ -1,0 +1,26 @@
+package sub1011;
+
+import java.io.File;
+import java.io.IOException;
+
+public class Dir {
+
+	public static void main(String[] args) throws IOException {
+		new Dir().printDir("test_dir");
+		System.out.println("출력이 완료되었습니다.");
+	}
+	
+	private void printDir(String str) throws IOException {
+		File f = new File(str);
+		File[] list = f.listFiles();
+		for(int i=0;i<list.length;i++) {
+			if(list[i].isDirectory()) {
+				printDir(list[i].getCanonicalPath().toString());
+				System.out.println(list[i].getName());
+			}
+			else if(!list[i].exists())
+				System.out.println(list[i]);
+		}
+	}
+
+}

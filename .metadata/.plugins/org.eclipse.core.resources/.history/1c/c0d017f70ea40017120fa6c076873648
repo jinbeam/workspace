@@ -1,5 +1,0 @@
-package threadEx;
-
-public class AfterThreadRunnable {
-
-}

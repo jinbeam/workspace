@@ -13,8 +13,8 @@ public class Prob {
 			bookList.add(makeBook("초보자를 위한 SQL : 컴퓨터 : 28000"));
 			bookList.add(makeBook("HTML5 API 소개 : 컴퓨터 : 58000"));
 			bookList.add(makeBook("JDBC Programming 기초 : 컴퓨터 : 45000"));
-			//bookList.add(makeBook("JDBC Programming 기초 : 컴퓨터"));
-			bookList.add(makeBook("JSP Programming : 컴퓨터 : 56000"));
+			bookList.add(makeBook("JDBC Programming 기초 : 컴퓨터"));
+			//bookList.add(makeBook("JSP Programming : 컴퓨터 : 56000"));
 			System.out.println("<< 책 목록 >>");
 			printBookList(bookList);
 		}catch(DataFormatException e) {
@@ -22,7 +22,7 @@ public class Prob {
 		}
 	}
 	
-	private static Book makeBook(String bookData) throws DataFormatException {
+	private static Book makeBook(String bookData) {
 		String[] str = bookData.split(" : ");
 		Book book = new Book();
 		if(str.length != 3) {

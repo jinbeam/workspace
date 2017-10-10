@@ -1,0 +1,41 @@
+package sub1011;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.Vector;
+
+public class Prob {
+	public static void main(String args[]) {
+		Prob e = new Prob();
+		Vector scores = e.getList();
+		for(int i=0; i<scores.size();i++) {
+			System.out.println(scores.get(i));
+		}
+	}
+	
+	public Vector getList() throws FileNotFoundException {
+		BufferedReader br = null;
+		Vector v = new Vector();
+		
+		br = new BufferedReader(new FileReader("list.txt"));
+		String str;
+		while( (str=br.readLine() ) != null) {
+			String[] score= str.split("/");
+			if(score[1].equalsIgnoreCase("java") && Integer.parseInt(score[2])>=80) {
+				v.add(score[0]+", "+score[1]+", "+score[2]+", 수료");
+			}
+			else if(score[1].equalsIgnoreCase("java") && Integer.parseInt(score[2])<80) {
+				v.add(score[0]+", "+score[1]+", "+score[2]+", 미수료");
+			}
+			else if(score[1].equalsIgnoreCase("sql") && Integer.parseInt(score[2])>=90) {
+				v.add(score[0]+", "+score[1]+", "+score[2]+", 수료");
+			}
+			else if(score[1].equalsIgnoreCase("sql") && Integer.parseInt(score[2])<90) {
+				v.add(score[0]+", "+score[1]+", "+score[2]+", 미수료");
+			}
+		}
+		
+		return v;
+	}
+}
