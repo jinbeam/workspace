@@ -1,0 +1,42 @@
+package sub1012;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.Vector;
+
+public class FileUtil {
+	public static void fileToPrint(String fileName) throws Exception {
+		BufferedReader br = null;
+		String str = "";
+		br = new BufferedReader(new FileReader(fileName));
+		
+		
+			while((str=br.readLine()) != null) {
+				System.out.println(":: "+str);
+			}
+			br.close();
+		
+	}
+	
+	public static Vector<User> fileFindAddress(String fileName, String address) throws Exception{
+		BufferedReader br = null;
+		String str = "";
+		br = new BufferedReader(new FileReader(fileName));
+		Vector v = new Vector();
+		
+		
+			while((str=br.readLine()) != null) {
+				String[] information = str.split("/");
+				if(information[1].equals(address)) {
+					if(information[3].equals("¿©")) {
+						v.add(new User(information[0], information[1], information[2], false);
+					}
+					else
+						v.add(new User(information[0], information[1], information[2], true);
+				}
+			}
+			br.close();
+			
+		return v;
+	}
+}

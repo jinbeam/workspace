@@ -1,0 +1,14 @@
+package sub1012;
+
+import java.util.Vector;
+
+public class FileUtil {
+	public static void fileToPrint(String fileName) {
+		
+	}
+	
+	public static Vector<User> fileFindAddress(String fileName, String address){
+		
+		return null;
+	}
+}

@@ -1,0 +1,27 @@
+package sub1012;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Vector;
+
+public class FileUtil {
+	public static void fileToPrint(String fileName) throws Exception {
+		BufferedReader br = null;
+		String str = "";
+		br = new BufferedReader(new FileReader(fileName));
+		
+		
+			while((str=br.readLine()) != null) {
+				System.out.println(":: "+str);
+			}
+			br.close();
+		
+	}
+	
+	public static Vector<User> fileFindAddress(String fileName, String address){
+		
+		return null;
+	}
+}
